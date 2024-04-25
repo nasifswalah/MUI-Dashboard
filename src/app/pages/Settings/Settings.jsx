@@ -2,8 +2,8 @@ import React from "react";
 import DashboardWraper from "../../components/DashboardWraper";
 import { Typography } from "@mui/material";
 
-const Dashboard = ()=> {
-    return(
+const SettingsPage = ()=> {
+    return (
         <DashboardWraper title={"Dashboard"} >
           <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -34,6 +34,6 @@ const Dashboard = ()=> {
         </Typography>
         </DashboardWraper>
     );
-}
+};
 
-export default Dashboard
+export default SettingsPage;

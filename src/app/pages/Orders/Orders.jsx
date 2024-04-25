@@ -2,9 +2,9 @@ import React from "react";
 import DashboardWraper from "../../components/DashboardWraper";
 import { Typography } from "@mui/material";
 
-const Dashboard = ()=> {
-    return(
-        <DashboardWraper title={"Dashboard"} >
+const OrdersPage = ()=> {
+    return (
+        <DashboardWraper title={"Orders"} >
           <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
@@ -34,6 +34,6 @@ const Dashboard = ()=> {
         </Typography>
         </DashboardWraper>
     );
-}
+};
 
-export default Dashboard
+export default OrdersPage;
