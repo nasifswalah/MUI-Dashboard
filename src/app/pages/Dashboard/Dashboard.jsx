@@ -1,39 +1,52 @@
 import React from "react";
 import DashboardWraper from "../../components/DashboardWraper";
-import { Typography } from "@mui/material";
+import { Avatar, Grid, Paper, Stack, Typography } from "@mui/material";
+import InventoryIcon from '@mui/icons-material/Inventory';
+import GroupIcon from '@mui/icons-material/Group';
+import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
+import UndoIcon from '@mui/icons-material/Undo';
 
-const Dashboard = ()=> {
-    return(
-        <DashboardWraper title={"Dashboard"} >
-          <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-          enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-          imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-          Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-          Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-          nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-          leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-          feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-          consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-          sapien faucibus et molestie ac.
-        </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-          eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-          neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-          tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-          sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-          tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
-          gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
-          et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
-          tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-          eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-          posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
-        </DashboardWraper>
-    );
+const Dashboard = () => {
+  return (
+    <DashboardWraper title={"Dashboard"} >
+      <Grid container spacing={2}>
+        <Grid item xs={3}>
+          <Paper sx={{ p: 3 }} >
+            <PaperItem title="Orders" count="234" color="#1976d2" icon={<InventoryIcon/>} ></PaperItem>
+          </Paper>
+        </Grid>
+        <Grid item xs={3}>
+          <Paper sx={{ p: 3 }} >
+          <PaperItem title="Users" count="5234" color="#1976d2" icon={<GroupIcon/>} ></PaperItem>
+          </Paper>
+        </Grid>
+        <Grid item xs={3}>
+          <Paper sx={{ p: 3 }} >
+          <PaperItem title="Revenue" count="3,56,719" color="#1976d2" icon={<CurrencyRupeeIcon/>} ></PaperItem>
+          </Paper>
+        </Grid>
+        <Grid item xs={3}>
+          <Paper sx={{ p: 3 }} >
+          <PaperItem title="Refunds" count="26,784" color="#1976d2" icon={<UndoIcon/>} ></PaperItem>
+          </Paper>
+        </Grid>
+      </Grid>
+    </DashboardWraper>
+  );
+}
+
+const PaperItem = ({color, icon, title, count}) => {
+  return (
+    <Stack direction="row" spacing={2} alignItems="center">
+      <Avatar sx={{ backgroundColor: color, width: 54, height: 54 }} >
+        {icon}
+      </Avatar>
+      <div>
+        <Typography color={"primary"} >{title}</Typography>
+        <Typography variant="h4" >{count}</Typography>
+      </div>
+    </Stack>
+  );
 }
 
 export default Dashboard

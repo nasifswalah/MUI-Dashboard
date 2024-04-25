@@ -91,7 +91,7 @@ const DashboardWraper = ({children, title})=> {
       </Drawer>
       <Box
         component="main"
-        sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
+        sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3, backgroundColor: '#f5f5f5', height: '100vh' }}
       >
         <Toolbar />
         <div>
